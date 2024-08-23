@@ -387,3 +387,170 @@
 // }
 
 // console.log(tubIdUser);
+
+// 3. user larni maoshlarini hissoblab 1 ta user ga biriktirish
+
+// interface userType {
+//   id: number;
+//   name: string;
+//   username: string;
+//   salery: number;
+// }
+
+// let users: userType[] = [
+//   {
+//     id: 1,
+//     name: "Leanne Graham",
+//     username: "Bret",
+//     salery: 1000,
+//   },
+//   {
+//     id: 2,
+//     name: "Ervin Howell",
+//     username: "Antonette",
+//     salery: 3000,
+//   },
+//   {
+//     id: 3,
+//     name: "Clementine Bauch",
+//     username: "Samantha",
+//     salery: 4000,
+//   },
+//   {
+//     id: 4,
+//     name: "Patricia Lebsack",
+//     username: "Karianne",
+//     salery: 3000,
+//   },
+//   {
+//     id: 5,
+//     name: "Chelsey Dietrich",
+//     username: "Kamren",
+//     salery: 5000,
+//   },
+//   {
+//     id: 6,
+//     name: "Mrs. Dennis Schulist",
+//     username: "Leopoldo_Corkery",
+//     salery: 6000,
+//   },
+//   {
+//     id: 7,
+//     name: "Kurtis Weissnat",
+//     username: "Elwyn.Skiles",
+//     salery: 34000,
+//   },
+//   {
+//     id: 8,
+//     name: "Nicholas Runolfsdottir V",
+//     username: "Maxime_Nienow",
+//     salery: 3000,
+//   },
+//   {
+//     id: 9,
+//     name: "Glenna Reichert",
+//     username: "Delphine",
+//     salery: 14000,
+//   },
+//   {
+//     id: 10,
+//     name: "Clementina DuBuque",
+//     username: "Moriah.Stanton",
+//     salery: 18000,
+//   },
+// ];
+
+// let allSalery: number = 0;
+
+// for (let user of users) {
+//   allSalery += user.salery;
+// }
+
+// console.log(allSalery);
+
+// 4. arrey ichidagi unic sonarni qoldirish
+
+// let arr: number[] = [5, 2, 3, 4, 5, 2, 23, 2, 3, 7];
+// let unicArr: number[] = [];
+// let num: number = 0;
+
+// for (let i of arr) {
+//   if (!unicArr.includes(i)) {
+//     unicArr.push(i);
+//   }
+// }
+
+// console.log(unicArr);
+
+// 5 arrey ichidagi user nomli objetlarni idlari takrorlanganlarini chiqarib yuborish
+
+interface userType {
+  id: number;
+  name: string;
+  username: string;
+}
+
+let users: userType[] = [
+  {
+    id: 1,
+    name: "Leanne Graham",
+    username: "Bret",
+  },
+  {
+    id: 2,
+    name: "Ervin Howell",
+    username: "Antonette",
+  },
+  {
+    id: 3,
+    name: "Clementine Bauch",
+    username: "Samantha",
+  },
+  {
+    id: 7,
+    name: "Patricia Lebsack",
+    username: "Karianne",
+  },
+  {
+    id: 5,
+    name: "Chelsey Dietrich",
+    username: "Kamren",
+  },
+  {
+    id: 5,
+    name: "Mrs. Dennis Schulist",
+    username: "Leopoldo_Corkery",
+  },
+  {
+    id: 7,
+    name: "Kurtis Weissnat",
+    username: "Elwyn.Skiles",
+  },
+  {
+    id: 3,
+    name: "Nicholas Runolfsdottir V",
+    username: "Maxime_Nienow",
+  },
+  {
+    id: 4,
+    name: "Glenna Reichert",
+    username: "Delphine",
+  },
+  {
+    id: 3,
+    name: "Clementina DuBuque",
+    username: "Moriah.Stanton",
+  },
+];
+
+let unicUsers: userType[] = [];
+
+for (let user of users) {
+  let userId: number = user.id;
+
+  if (!unicUsers.some((unicUser) => unicUser.id === userId)) {
+    unicUsers.push(user);
+  }
+}
+
+console.log(unicUsers);
